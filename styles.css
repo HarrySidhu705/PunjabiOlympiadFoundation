@@ -1,0 +1,280 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s ease;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #0073e6, #00bcd4);
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Navigation */
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ff4081;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(to right, #0073e6, #00bcd4);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-out;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+#hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeIn 3s ease-out;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+#hero .btn {
+    padding: 15px 30px;
+    background-color: #ff4081;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.2rem;
+}
+
+#hero .btn:hover {
+    background-color: #ff80ab;
+    transform: scale(1.1);
+}
+
+/* Highlights Section */
+#highlights {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 40px 20px;
+    background: #f9f9f9;
+}
+
+.highlight {
+    background: #0073e6;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: popIn 0.8s ease-out;
+}
+
+.highlight h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.highlight:hover {
+    transform: translateY(-10px);
+    background-color: #00bcd4;
+}
+
+/* Grid Layout for Olympiads */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #ffffff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1s ease-out;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    color: #0073e6;
+    font-weight: bold;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, #ff4081, #ff80ab);
+    color: white;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripple 1.5s ease-out infinite;
+}
+
+/* Countdown Section */
+#countdown {
+    background: #ff4081;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    animation: pulse 2s infinite alternate;
+}
+
+#timer {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff80ab;
+    animation: countdownAnimation 1s infinite alternate;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes countdownAnimation {
+    from {
+        color: #ff4081;
+    }
+    to {
+        color: #ff80ab;
+    }
+}
+
+@keyframes ripple {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #highlights {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .highlight {
+        width: 160px;
+        margin-bottom: 20px;
+    }
+}
